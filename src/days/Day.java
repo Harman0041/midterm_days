@@ -4,8 +4,6 @@
  */
 package days;
 
-import java.util.Scanner;
-
 /**This class takes String input from user 
  * and calls method  to print the 
  * name of the day.
@@ -15,21 +13,27 @@ import java.util.Scanner;
  * then print the week day names. 
  *
  * @author sivagamasrinivasan
- jn 22nd
+ 
  */
-public class Days {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-         
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+
+
+public enum Day {
+    MONDAY("Monday"),
+    TUESDAY("Tuesday"),
+    WEDNESDAY("Wednesday"),
+    THURSDAY("Thursday"),
+    FRIDAY("Friday"),
+    SATURDAY("Saturday"),
+    SUNDAY("Sunday");
+
+    private final String dayName;
+
+    Day(String dayName) {
+        this.dayName = dayName;
+    }
+
+    public String getDayName() {
+        return dayName;
+    }
 }
